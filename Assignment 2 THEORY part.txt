@@ -1,0 +1,36 @@
+1.
+Encapsulation improves security by limiting direct access to an object’s internal data. It allows interaction only through controlled methods. Keeping data members private prevents unauthorized or accidental changes from outside the class. The validation logic in setters ensures that only valid data enters the system. This reduces errors and misuse. Controlled access helps maintain data integrity. It guarantees that the object’s state remains consistent and follows defined rules. This approach makes the system more reliable and easier to maintain.
+
+2.calculateGrade() is abstract because the logic of the method depends on the kind of student. Each student category calculates grades differently, thus the abstract class outlines the method only and the subclasses provide the implementation. This achieves abstraction by hiding the implementation details while at the same time enforcing a common method contract.
+
+3.The static keyword is used for college, level data which is basically common knowledge of all the students and, therefore, doesn't change per object. A static variable is a class level variable rather than an instance level variable which saves memory and guarantees consistency. A static member is used in such a way that the name of the university is the same for all student objects thereby maintaining the entire system in a uniform manner.
+
+4.A final variable's value cannot be modified once it has been initialized.
+A final method cannot be overridden by subclasses, thus ensuring consistent behavior.
+A final class cannot be inherited, which means no further extension and modification of the class can be done.
+Use of the final keyword is typically aimed at imposing limitations and thus enhancing the security and stability of the object, oriented design.
+
+5.Inheritance enhances code reuse by enabling a child class to access the attributes and methods of the parent class. Student common details are captured in the base class and thus are available to the student subclasses. It cuts down on redundancy, makes code more maintainable, and simplifies the introduction of new student types, all without changing the existing code.
+
+6.Interfaces are better than classes for adding extra capabilities because they support multiple inheritance without causing ambiguity. A class can implement multiple interfaces, allowing it to inherit behavior contracts from different sources. This makes the system more flexible, loosely coupled, and easier to extend compared to class inheritance.
+
+7.Java avoids the Diamond Problem by supporting multiple inheritance through interfaces
+ where the implementing class provides the method implementation.
+
+8.The JVM achieves late binding by resolving method calls at runtime instead of compile time. When a parent class reference refers to a child class object, the JVM determines the actual object type during execution and calls the overridden method of that object. This dynamic method dispatch enables runtime polymorphism and ensures the correct method implementation is executed.
+
+9.Polymorphism using interface references occurs when an interface reference refers to an object of a class that implements the interface. The method call is resolved at runtime based on the actual object type, not the reference type. This allows different classes to provide their own implementations of the same interface method, promoting flexibility and loose coupling in the system.
+
+// BONUS QUESTIONS 
+1.
+If a class implements two interfaces that have default methods with the same signature, Java will give a compilation error because it is ambiguous.
+The method implementing class overrides the method and gives its own implementation in order to resolve the conflict. If necessary, the class in that method may call a certain interface's default method explicitly using
+InterfaceName.super.methodName()
+
+2.
+Static methods are a part of the class itself and not of its instances. It is through runtime polymorphism and object instances that method overriding occurs. Because static methods are dealt with at compile time and are referred to using the class name, they are not able to take part in dynamic method dispatch. Hence, static methods cannot be overridden; instead, they can only be hidden.
+
+3.
+Compile-time polymorphism occurs when the method call is resolved during compilation. It is achieved using method overloading, where multiple methods have the same name but different parameter lists. The compiler determines which method to call based on the method signature and reference type, resulting in faster execution.
+
+Runtime polymorphism occurs when the method call is resolved during program execution. It is achieved using method overriding, where a child class provides a specific implementation of a method defined in its parent class. The JVM decides which method to execute based on the actual object type, enabling dynamic behavior through late binding.
